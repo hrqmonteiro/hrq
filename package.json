@@ -16,7 +16,8 @@
     "next-themes": "^0.2.0",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "typeit-react": "^2.5.1-alpha.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

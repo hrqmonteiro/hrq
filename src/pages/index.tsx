@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Hero } from 'components/sections'
 import { Container, Navbar } from 'components/ui'
+import TypeIt from 'typeit-react'
 
 const HomePage: NextPage = () => {
   return (
@@ -14,9 +15,23 @@ const HomePage: NextPage = () => {
 
       <Container>
         <Hero>
-          <h1 className='hone'>
+          <h1 className='hone font-mono'>
             Hi, i{"'"}m Henrique,
-            <br />a software developer based in Brazil.
+            <br />a{' '}
+            <TypeIt
+              options={{ loop: true }}
+              getBeforeInit={(instance: any) => {
+                instance
+                  .type('Software Developer')
+                  .pause(750)
+                  .delete(18)
+                  .pause(750)
+                  .type('Front-end Engineer')
+                return instance
+              }}
+            />
+            <br />
+            based in Brazil.
           </h1>
         </Hero>
       </Container>
