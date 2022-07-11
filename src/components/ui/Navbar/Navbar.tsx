@@ -63,26 +63,30 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
   return (
     <div className='w-full my-5 h-20 fixed top-0'>
       <Container>
-        <div className='flexBetween'>
-          <Logo width={80} />
-          <ul className='hidden md:inline-flex lg:inline-flex'>
-            {links.map((link: any, index: number) => (
-              <li key={index}>
-                <Link href={link.link}>
-                  <a
-                    onClick={() => console.log(router.pathname)}
-                    className={cn(
-                      linkClasses,
-                      router.pathname === link.link ? 'border-b-2' : ''
-                    )}
-                  >
-                    {link.name}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className='flex justify-center items-center'>
+        <div className='flex flex-nowrap justify-between'>
+          <div className='w-1/3 flex justify-start'>
+            <Logo width={80} />
+          </div>
+          <div className='w-1/3 flex justify-center'>
+            <ul className='hidden md:inline-flex lg:inline-flex'>
+              {links.map((link: any, index: number) => (
+                <li key={index}>
+                  <Link href={link.link}>
+                    <a
+                      onClick={() => console.log(router.pathname)}
+                      className={cn(
+                        linkClasses,
+                        router.pathname === link.link ? 'border-b-2' : ''
+                      )}
+                    >
+                      {link.name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='w-1/3 flex justify-end items-center'>
             <a
               href='mailto:hrqmonteiro@pm.me'
               onMouseOver={() =>

@@ -22,11 +22,16 @@ export default function ThemeButton() {
     const currentTheme = theme === 'system' ? systemTheme : theme
 
     return (
-      <button className={cn('fixed btnrounded dark-mode-switch', s.switch)}>
+      <button
+        onClick={() =>
+          currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
+        }
+        className={cn('fixed btnrounded dark-mode-switch', s.switch)}
+      >
         {currentTheme === 'dark' ? (
-          <Sun onClick={() => setTheme('light')} className='text-2xl' />
+          <Sun className='text-2xl' />
         ) : currentTheme === 'light' ? (
-          <Moon onClick={() => setTheme('dark')} className='text-2xl' />
+          <Moon className='text-2xl' />
         ) : null}
       </button>
     )
