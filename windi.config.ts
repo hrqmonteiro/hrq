@@ -25,6 +25,9 @@ export default defineConfig({
       lineHeight: {
         extraloose: '3'
       },
+      rotate: {
+        sq: '-25deg'
+      },
       colors: {
         foreground: 'var(--foreground)',
         background: 'var(--background)'
@@ -44,6 +47,12 @@ export default defineConfig({
     flexBetween: 'w-full flex justify-between items-center',
     flexCenter: 'w-full flex justify-center items-center',
     flexStart: 'w-full flex justify-around items-center',
-    hone: 'text-6xl leading-none font-medium'
+    hone: 'text-6xl leading-none',
+    htwo: 'text-5xl leading-none',
+    hthree: 'text-4xl leading-none',
+    hfour: 'text-3xl leading-none',
+    hfive: 'text-2xl leading-none',
+    btnrounded:
+      'fixed left-6 bottom-4 flex justify-center items-center w-12 h-12 p-2 rounded-full bg-dark-600 dark:bg-white text-white dark:text-black hover:opacity-85'
   }
 })

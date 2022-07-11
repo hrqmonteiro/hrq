@@ -1,3 +1,5 @@
 export { default as Container } from './Container'
 export { default as Logo } from './Logo'
 export { default as Navbar } from './Navbar'
+export { default as SocialBar } from './SocialBar'
+export { default as ThemeButton } from './ThemeButton'
