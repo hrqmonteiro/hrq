@@ -37,7 +37,7 @@ const links: Array<Object> = [
   },
   {
     name: 'Reddit',
-    url: 'https://reddit.com/hrqmonteirodev',
+    url: 'https://reddit.com/u/hrqmonteirodev',
     color: 'hover:border-orange-500 hover:text-orange-500',
     icon: <RedditLogo className='text-xl' />
   },
