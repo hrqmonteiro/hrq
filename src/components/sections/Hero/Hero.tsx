@@ -39,15 +39,16 @@ export default function Hero({
   h1secondLine,
   firstParagraph,
   secondParagraph,
-  thirdParagraph
+  thirdParagraph,
+  fourthParagraph
 }: any): JSX.Element {
   return (
     <>
       <section
         id='hero'
-        className='min-h-screen w-full flex flex-wrap justify-start items-center'
+        className='min-h-screen py-16 w-full flex flex-wrap justify-start items-center'
       >
-        <div className='w-full md:w-1/2 lg:w-1/2'>
+        <div className='w-full md:w-full lg:w-1/2'>
           <h1
             className={cn(
               s.header,
@@ -62,9 +63,17 @@ export default function Hero({
             <br />
             {h1secondLine}
           </h1>
-          <p className='hthree font-normal mb-6'>{firstParagraph}</p>
-          <p className='hfour font-light mb-6'>{secondParagraph}</p>
-          <p className='hfive font-thin mb-6'>{thirdParagraph}</p>
+          <p className='hsix md:hthree lg:hthree font-normal mb-6'>
+            {firstParagraph}
+          </p>
+          <p className='hseven md:hfour lg:hfour font-light mb-6'>
+            {secondParagraph}
+          </p>
+          <p className='height md:hfive lg:hfive font-thin mb-6'>
+            <span>{thirdParagraph}</span>
+            <br />
+            <span>{fourthParagraph}</span>
+          </p>
         </div>
       </section>
       <SocialBar />

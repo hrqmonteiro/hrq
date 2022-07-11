@@ -5,6 +5,7 @@ import Link from 'next/link'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'next-i18next'
 
 export default function Navbar({ flag, locale }: any): JSX.Element {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -13,6 +14,7 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
     <EnvelopeSimpleOpen className='transform rotate-sq mr-3 text-xl' />
   )
 
+  const { t } = useTranslation('navbar')
   const router = useRouter()
 
   useEffect(() => {
@@ -41,19 +43,19 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
 
   const links: Array<Object> = [
     {
-      name: 'Home',
+      name: t('navbarHome'),
       link: '/'
     },
     {
-      name: 'Work',
+      name: t('navbarWork'),
       link: '/work'
     },
     {
-      name: 'Instagram',
+      name: t('navbarInstagram'),
       link: '/instagram'
     },
     {
-      name: 'Projects',
+      name: t('navbarProjects'),
       link: '/projects'
     }
   ]
@@ -63,7 +65,7 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
       <Container>
         <div className='flexBetween'>
           <Logo width={80} />
-          <ul className='inline-flex'>
+          <ul className='hidden md:inline-flex lg:inline-flex'>
             {links.map((link: any, index: number) => (
               <li key={index}>
                 <Link href={link.link}>
@@ -91,10 +93,12 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
                   <EnvelopeSimpleOpen className='transform rotate-sq mr-3 text-xl' />
                 )
               }
-              className='flex justify-center items-center transition-all duration-200 mx-8'
+              className='flex justify-center items-center transition-all duration-200 lg:mx-8'
             >
               {mailIcon}
-              <span>Hire Me!</span>
+              <span className='hidden md:hidden lg:block'>
+                {t('navbarHire')}
+              </span>
             </a>
             <Link locale={locale} href='/'>
               <a>{flag}</a>

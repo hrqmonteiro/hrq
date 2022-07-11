@@ -52,6 +52,9 @@ export default defineConfig({
     hthree: 'text-4xl leading-none',
     hfour: 'text-3xl leading-none',
     hfive: 'text-2xl leading-none',
+    hsix: 'text-xl leading-none',
+    hseven: 'text-lg leading-none',
+    height: 'text-sm leading-none',
     btnrounded:
       'fixed left-6 bottom-4 flex justify-center items-center w-12 h-12 p-2 rounded-full bg-dark-600 dark:bg-white text-white dark:text-black hover:opacity-85'
   }

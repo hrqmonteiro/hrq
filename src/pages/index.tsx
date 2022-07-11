@@ -84,6 +84,7 @@ const HomePage: NextPage = () => {
           firstParagraph={t('firstParagraph')}
           secondParagraph={t('secondParagraph')}
           thirdParagraph={t('thirdParagraph')}
+          fourthParagraph={t('fourthParagraph')}
         />
         <ThemeButton />
       </Container>
@@ -93,7 +94,7 @@ const HomePage: NextPage = () => {
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common']))
+    ...(await serverSideTranslations(locale, ['common', 'navbar']))
   }
 })
 
