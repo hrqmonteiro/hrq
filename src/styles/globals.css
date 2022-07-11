@@ -15,11 +15,50 @@ body {
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   color: inherit;
   text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+  margin: 0;
+}
+
+[data-scrollbar] {
+  min-width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  background-color: royalblue;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
 }

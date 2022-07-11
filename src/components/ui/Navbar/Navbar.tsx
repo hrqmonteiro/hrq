@@ -63,7 +63,7 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
   return (
     <div
       className={cn(
-        'w-full py-5 h-20 fixed top-0 filter backdrop-filter backdrop-blur-sm bg-opacity-5'
+        'w-full py-5 h-20 z-50 fixed top-0 filter backdrop-filter backdrop-blur-sm bg-opacity-5'
       )}
     >
       <Container>

@@ -1,31 +1,37 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { Hero } from 'components/sections'
-import { Container, Navbar, ThemeButton } from 'components/ui'
+import { Container, Navbar, Scroller, ThemeButton } from 'components/ui'
 import Flag from 'react-flags'
 import Tech from '@/components/sections/Tech/Tech'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
-const links: Array<Object> = [
-  {
-    name: 'Home',
-    link: '/'
-  },
-  {
-    name: 'Work',
-    link: '/work'
-  },
-  {
-    name: 'Instagram',
-    link: '/instagram'
-  },
-  {
-    name: 'Projects',
-    link: '/projects'
-  }
-]
+const Box = () => {
+  const $box: any = useRef()
+
+  useEffect(() => {
+    gsap.to($box.current, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: $box.current,
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        pinType: 'transform',
+        scrub: true,
+        pinSpacing: false
+      }
+    })
+  }, [])
+
+  return <div className='box' ref={$box} />
+}
 
 const HomePage: NextPage = () => {
   const router = useRouter()
@@ -76,18 +82,21 @@ const HomePage: NextPage = () => {
         locale={router.locale === 'pt' ? 'en' : 'pt'}
       />
 
-      <Container>
-        <Hero
-          h1firstLine={t('h1firstLine')}
-          h1secondLine={t('h1secondLine')}
-          firstParagraph={t('firstParagraph')}
-          secondParagraph={t('secondParagraph')}
-          thirdParagraph={t('thirdParagraph')}
-          fourthParagraph={t('fourthParagraph')}
-        />
-        <Tech />
-        <ThemeButton />
-      </Container>
+      <Scroller>
+        <Container>
+          <Hero
+            h1firstLine={t('h1firstLine')}
+            h1secondLine={t('h1secondLine')}
+            firstParagraph={t('firstParagraph')}
+            secondParagraph={t('secondParagraph')}
+            thirdParagraph={t('thirdParagraph')}
+            fourthParagraph={t('fourthParagraph')}
+          />
+          <Tech />
+          <ThemeButton />
+          <Box />
+        </Container>
+      </Scroller>
     </>
   )
 }
