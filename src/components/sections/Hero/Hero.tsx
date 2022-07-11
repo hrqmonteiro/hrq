@@ -58,19 +58,19 @@ export default function Hero({
           >
             {h1firstLine}
             <br />
-            <span className='text-green-500'>
+            <span className='text-green-500 italic'>
               <TypeWriter />
             </span>
             <br />
             {h1secondLine}
           </h1>
-          <p className='hsix md:hthree lg:hthree font-normal mb-6'>
+          <p className='hsix md:hfive lg:hfive font-normal mb-6'>
             {firstParagraph}
           </p>
-          <p className='hseven md:hfour lg:hfour font-light mb-6'>
+          <p className='hseven md:hsix lg:hsix font-light mb-6'>
             {secondParagraph}
           </p>
-          <p className='height md:hfive lg:hfive font-thin mb-6'>
+          <p className='height md:hseven lg:hseven font-thin mb-6'>
             <span>{thirdParagraph}</span>
             <br />
             <span>{fourthParagraph}</span>

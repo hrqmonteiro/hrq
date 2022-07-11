@@ -61,9 +61,13 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
   ]
 
   return (
-    <div className='w-full my-5 h-20 fixed top-0'>
+    <div
+      className={cn(
+        'w-full py-5 h-20 fixed top-0 filter backdrop-filter backdrop-blur-sm bg-opacity-5'
+      )}
+    >
       <Container>
-        <div className='flex flex-nowrap justify-between'>
+        <div className='flex flex-nowrap justify-between items-center'>
           <div className='w-1/3 flex justify-start'>
             <Logo width={80} />
           </div>
@@ -88,7 +92,6 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
           </div>
           <div className='w-1/3 flex justify-end items-center'>
             <a
-              href='mailto:hrqmonteiro@pm.me'
               onMouseOver={() =>
                 setMailIcon(<EnvelopeSimple className='mr-3 text-xl' />)
               }
@@ -97,13 +100,16 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
                   <EnvelopeSimpleOpen className='transform rotate-sq mr-3 text-xl' />
                 )
               }
-              className='flex justify-center items-center transition-all duration-200 lg:mx-8'
+              href='mailto:hrqmonteiro@pm.me'
+              className='lg:mx-4 flex justify-start items-center hover:tracking-2px transition-all duration-200'
             >
               {mailIcon}
-              <span className='hidden md:hidden lg:block'>
+              <div className='hidden lg:min-w-28 md:hidden lg:flex justify-start'>
                 {t('navbarHire')}
-              </span>
+              </div>
             </a>
+          </div>
+          <div className='flex items-center lg:mx-4'>
             <Link locale={locale} href='/'>
               <a>{flag}</a>
             </Link>

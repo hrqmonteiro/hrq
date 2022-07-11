@@ -19,6 +19,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-flags": "^0.1.18",
+    "react-icons": "^4.4.0",
     "typeit-react": "^2.5.1-alpha.0"
   },
   "devDependencies": {

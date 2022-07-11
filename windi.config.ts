@@ -35,6 +35,9 @@ export default defineConfig({
       textColor: {
         foreground: 'var(--foreground)'
       },
+      backgroundColor: {
+        background: 'var(--background)'
+      },
       fontFamily: {
         sans: ['Neue Haas Grotesk Display Pro'],
         mono: ['DM Mono']

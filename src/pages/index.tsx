@@ -6,25 +6,26 @@ import Head from 'next/head'
 import { Hero } from 'components/sections'
 import { Container, Navbar, ThemeButton } from 'components/ui'
 import Flag from 'react-flags'
+import Tech from '@/components/sections/Tech/Tech'
 
-  const links: Array<Object> = [
-    {
-      name: 'Home',
-      link: '/'
-    },
-    {
-      name: 'Work',
-      link: '/work'
-    },
-    {
-      name: 'Instagram',
-      link: '/instagram'
-    },
-    {
-      name: 'Projects',
-      link: '/projects'
-    }
-  ]
+const links: Array<Object> = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'Work',
+    link: '/work'
+  },
+  {
+    name: 'Instagram',
+    link: '/instagram'
+  },
+  {
+    name: 'Projects',
+    link: '/projects'
+  }
+]
 
 const HomePage: NextPage = () => {
   const router = useRouter()
@@ -37,13 +38,12 @@ const HomePage: NextPage = () => {
           <Flag
             name='USA'
             format='png'
-            pngSize={16}
+            pngSize={24}
             shiny={false}
             alt='USA Flag'
             basePath='/images/flags'
           />
         </div>
-        <span className='text-sm'>EN</span>
       </div>
     )
   }
@@ -55,13 +55,12 @@ const HomePage: NextPage = () => {
           <Flag
             name='BRA'
             format='png'
-            pngSize={16}
+            pngSize={24}
             shiny={false}
             alt='BRA Flag'
             basePath='/images/flags'
           />
         </div>
-        <span className='text-sm'>PT</span>
       </div>
     )
   }
@@ -86,6 +85,7 @@ const HomePage: NextPage = () => {
           thirdParagraph={t('thirdParagraph')}
           fourthParagraph={t('fourthParagraph')}
         />
+        <Tech />
         <ThemeButton />
       </Container>
     </>
@@ -94,7 +94,7 @@ const HomePage: NextPage = () => {
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common', 'navbar']))
+    ...(await serverSideTranslations(locale, ['common', 'navbar', 'tech']))
   }
 })
 
