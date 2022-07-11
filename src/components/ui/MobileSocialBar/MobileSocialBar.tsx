@@ -63,21 +63,23 @@ const links: Array<Object> = [
 
 export default function MobileSocialBar(): JSX.Element {
   return (
-    <div className='absolute left-3 bottom-6 md:hidden lg:hidden'>
-      <ul className='inline-flex'>
-        {links.map((link: any, index: number) => (
-          <li key={index} className='mx-3'>
-            <a
-              href={link.url}
-              className={cn(link.color)}
-              target='_blank'
-              rel='noreferrer'
-            >
-              {link.icon}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div className='absolute left-0 bottom-6 md:hidden lg:hidden'>
+      <div className='w-screen flex justify-center'>
+        <ul className='inline-flex'>
+          {links.map((link: any, index: number) => (
+            <li key={index} className='mx-3'>
+              <a
+                href={link.url}
+                className={cn(link.color)}
+                target='_blank'
+                rel='noreferrer'
+              >
+                {link.icon}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
