@@ -8,7 +8,6 @@ export default function Layout({ children, ...rest }: any) {
   let scrollbar = useRef() as any
 
   useEffect(() => {
-    console.log('coso')
     gsap.registerPlugin(ScrollTrigger)
 
     const el = $content.current
@@ -32,19 +31,6 @@ export default function Layout({ children, ...rest }: any) {
     })
 
     scrollbar.current.addListener(ScrollTrigger.update)
-
-    gsap.to('.box', {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '.box',
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinType: 'transform',
-        scrub: true,
-        pinSpacing: false
-      }
-    })
 
     return () => {
       if (scrollbar.current) {

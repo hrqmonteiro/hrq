@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
@@ -8,30 +7,6 @@ import { Hero } from 'components/sections'
 import { Container, Navbar, Scroller, ThemeButton } from 'components/ui'
 import Flag from 'react-flags'
 import Tech from '@/components/sections/Tech/Tech'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-
-const Box = () => {
-  const $box: any = useRef()
-
-  useEffect(() => {
-    gsap.to($box.current, {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: $box.current,
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinType: 'transform',
-        scrub: true,
-        pinSpacing: false
-      }
-    })
-  }, [])
-
-  return <div className='box' ref={$box} />
-}
 
 const HomePage: NextPage = () => {
   const router = useRouter()
@@ -94,7 +69,6 @@ const HomePage: NextPage = () => {
           />
           <Tech />
           <ThemeButton />
-          <Box />
         </Container>
       </Scroller>
     </>

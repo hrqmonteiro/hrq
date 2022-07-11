@@ -18,9 +18,8 @@ export default function Navbar({ flag, locale }: any): JSX.Element {
   const router = useRouter()
 
   useEffect(() => {
-    console.log(systemTheme)
     setMounted(true)
-  }, [systemTheme])
+  }, [])
 
   const renderThemeChanger = () => {
     if (!mounted) return null
