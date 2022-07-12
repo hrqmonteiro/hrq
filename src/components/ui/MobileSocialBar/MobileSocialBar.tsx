@@ -63,8 +63,8 @@ const links: Array<Object> = [
 
 export default function MobileSocialBar(): JSX.Element {
   return (
-    <div className='bg-opacity-5 filter backdrop-filter backdrop-blur-sm absolute left-0 bottom-6 md:hidden lg:hidden'>
-      <div className='w-screen flex justify-center'>
+    <div className='w-full -mt-10 relative md:hidden lg:hidden'>
+      <div className='flex justify-center'>
         <ul className='inline-flex'>
           {links.map((link: any, index: number) => (
             <li key={index} className='mx-3'>

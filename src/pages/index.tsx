@@ -73,10 +73,9 @@ const HomePage: NextPage = () => {
           thirdParagraph={t('thirdParagraph')}
           fourthParagraph={t('fourthParagraph')}
         />
+        <SocialBar />
         <Tech />
       </Scroller>
-      <SocialBar />
-      <MobileSocialBar />
       <ThemeButton />
     </>
   )

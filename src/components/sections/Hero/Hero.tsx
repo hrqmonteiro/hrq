@@ -1,6 +1,7 @@
 import TypeIt from 'typeit-react'
 import s from './Hero.module.css'
 import cn from 'classnames'
+import { MobileSocialBar } from '@/components/ui'
 
 const TypeWriter = () => (
   <TypeIt
@@ -75,6 +76,7 @@ export default function Hero({
           </p>
         </div>
       </section>
+      <MobileSocialBar />
     </>
   )
 }
