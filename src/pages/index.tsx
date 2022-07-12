@@ -4,7 +4,14 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { Hero } from 'components/sections'
-import { Container, Navbar, Scroller, ThemeButton } from 'components/ui'
+import {
+  Container,
+  MobileSocialBar,
+  Navbar,
+  Scroller,
+  SocialBar,
+  ThemeButton
+} from 'components/ui'
 import Flag from 'react-flags'
 import Tech from '@/components/sections/Tech/Tech'
 
@@ -58,19 +65,19 @@ const HomePage: NextPage = () => {
       />
 
       <Scroller>
-        <Container>
-          <Hero
-            h1firstLine={t('h1firstLine')}
-            h1secondLine={t('h1secondLine')}
-            firstParagraph={t('firstParagraph')}
-            secondParagraph={t('secondParagraph')}
-            thirdParagraph={t('thirdParagraph')}
-            fourthParagraph={t('fourthParagraph')}
-          />
-          <Tech />
-          <ThemeButton />
-        </Container>
+        <Hero
+          h1firstLine={t('h1firstLine')}
+          h1secondLine={t('h1secondLine')}
+          firstParagraph={t('firstParagraph')}
+          secondParagraph={t('secondParagraph')}
+          thirdParagraph={t('thirdParagraph')}
+          fourthParagraph={t('fourthParagraph')}
+        />
+        <Tech />
       </Scroller>
+      <SocialBar />
+      <MobileSocialBar />
+      <ThemeButton />
     </>
   )
 }

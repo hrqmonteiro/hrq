@@ -65,7 +65,7 @@ const links: Array<Object> = [
 export default function SocialBar(): JSX.Element {
   const [defaultClasses, setDefaultClasses] = useState<string>('invisible')
   return (
-    <div className='hidden md:block lg:block relative bottom-0 -mt-12 lowercase'>
+    <div className='hidden filter backdrop-filter backdrop-blur-sm bg-opacity-5 md:block lg:block relative bottom-0 -mt-12 lowercase'>
       <div className='flex justify-center'>
         <ul className='inline-flex'>
           {links.map((link: any, index: number) => (

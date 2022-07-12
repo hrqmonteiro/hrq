@@ -10,7 +10,7 @@ export default function Tech(): JSX.Element {
 
   const Card = ({ icon }: Props) => {
     return (
-      <div className='bg-gray-100 w-24 h-24 m-2 lg:m-8 flex justify-center items-center rounded-lg'>
+      <div className='bg-gray-100 w-24 h-24 m-2 flex justify-center items-center rounded-lg'>
         {icon}
       </div>
     )
