@@ -3,17 +3,9 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
-import { Hero } from 'components/sections'
-import {
-  Container,
-  MobileSocialBar,
-  Navbar,
-  Scroller,
-  SocialBar,
-  ThemeButton
-} from 'components/ui'
+import { Hero, Tech } from 'components/sections'
+import { Navbar, SocialBar, ThemeButton } from 'components/ui'
 import Flag from 'react-flags'
-import Tech from '@/components/sections/Tech/Tech'
 
 const HomePage: NextPage = () => {
   const router = useRouter()
@@ -64,18 +56,10 @@ const HomePage: NextPage = () => {
         locale={router.locale === 'pt' ? 'en' : 'pt'}
       />
 
-      <Scroller>
-        <Hero
-          h1firstLine={t('h1firstLine')}
-          h1secondLine={t('h1secondLine')}
-          firstParagraph={t('firstParagraph')}
-          secondParagraph={t('secondParagraph')}
-          thirdParagraph={t('thirdParagraph')}
-          fourthParagraph={t('fourthParagraph')}
-        />
-        <SocialBar />
-        <Tech />
-      </Scroller>
+      <Hero />
+      <SocialBar />
+      <img src='/images/wave.svg' alt='wave' />
+      <Tech />
       <ThemeButton />
     </>
   )
@@ -83,7 +67,12 @@ const HomePage: NextPage = () => {
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common', 'navbar', 'tech']))
+    ...(await serverSideTranslations(locale, [
+      'common',
+      'hero',
+      'navbar',
+      'tech'
+    ]))
   }
 })
 

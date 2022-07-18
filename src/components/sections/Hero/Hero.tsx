@@ -1,7 +1,9 @@
 import TypeIt from 'typeit-react'
 import s from './Hero.module.css'
 import cn from 'classnames'
-import { MobileSocialBar } from '@/components/ui'
+import { Button, Container, MobileSocialBar } from 'components/ui'
+import { ChatDots, ChatText } from 'phosphor-react'
+import { useTranslation } from 'next-i18next'
 
 const TypeWriter = () => (
   <TypeIt
@@ -34,47 +36,49 @@ const TypeWriter = () => (
   />
 )
 
-export default function Hero({
-  h1firstLine,
-  h1secondLine,
-  firstParagraph,
-  secondParagraph,
-  thirdParagraph,
-  fourthParagraph
-}: any): JSX.Element {
+export default function Hero(): JSX.Element {
+  const { t } = useTranslation('hero')
+
   return (
     <>
       <section
         id='hero'
         className='min-h-screen py-16 w-full flex flex-wrap justify-start items-center'
       >
-        <div className='w-full md:w-full lg:w-1/2'>
-          <h1
-            className={cn(
-              s.header,
-              'hthree md:htwo lg:htwo font-medium font-mono mb-10'
-            )}
-          >
-            {h1firstLine}
-            <br />
-            <span className='text-green-500 italic'>
-              <TypeWriter />
-            </span>
-            <br />
-            {h1secondLine}
-          </h1>
-          <p className='hsix md:hfive lg:hfive font-normal mb-6'>
-            {firstParagraph}
-          </p>
-          <p className='hseven md:hsix lg:hsix font-light mb-6'>
-            {secondParagraph}
-          </p>
-          <p className='height md:hseven lg:hseven font-thin mb-6'>
-            <span>{thirdParagraph}</span>
-            <br />
-            <span>{fourthParagraph}</span>
-          </p>
-        </div>
+        <Container>
+          <div className='w-full md:w-full lg:w-1/2'>
+            <h1
+              className={cn(
+                s.header,
+                'hthree md:htwo lg:htwo font-medium font-mono mb-10'
+              )}
+            >
+              {t('h1firstLine')}
+              <br />
+              <span className='text-green-500 italic'>
+                <TypeWriter />
+              </span>
+              <br />
+              {t('h1secondLine')}
+            </h1>
+            <p className='hsix md:hfive lg:hfive font-normal mb-6'>
+              {t('firstParagraph')}
+            </p>
+            <p className='hseven md:hsix lg:hsix font-light mb-6'>
+              {t('secondParagraph')}
+            </p>
+            <p className='height md:hseven lg:hseven font-thin mb-14'>
+              <span>{t('thirdParagraph')}</span>
+              <br />
+              <span>{t('fourthParagraph')}</span>
+            </p>
+            <Button
+              icon={<ChatDots className='text-2xl mx-2' />}
+              url='/#tech'
+              text={t('bookMyTime')}
+            />
+          </div>
+        </Container>
       </section>
       <MobileSocialBar />
     </>

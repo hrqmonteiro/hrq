@@ -30,7 +30,8 @@ export default defineConfig({
       },
       colors: {
         foreground: 'var(--foreground)',
-        background: 'var(--background)'
+        background: 'var(--background)',
+        base: 'var(--base)'
       },
       textColor: {
         foreground: 'var(--foreground)'
@@ -41,6 +42,9 @@ export default defineConfig({
       fontFamily: {
         sans: ['Neue Haas Grotesk Display Pro'],
         mono: ['DM Mono']
+      },
+      spacing: {
+        sq: '0.5rem'
       }
     }
   },
